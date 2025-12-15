@@ -4,7 +4,7 @@
 FROM golang:1.24.5 AS builder
 WORKDIR /free-ran-ue
 
-COPY . .
+COPY free-ran-ue/ .
 RUN go mod download
 
 RUN make bin
@@ -15,7 +15,7 @@ RUN make bin
 FROM node:20 AS consolebuilder
 WORKDIR /free-ran-ue
 
-COPY . .
+COPY free-ran-ue/ .
 RUN cd console/frontend && yarn install
 
 RUN make console
@@ -35,4 +35,4 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /free-ran-ue/build/free-ran-ue /free-ran-ue/free-ran-ue
-COPY --from=consoleBuilder /free-ran-ue/build/console /free-ran-ue/console
+COPY --from=consolebuilder /free-ran-ue/build/console /free-ran-ue/console
