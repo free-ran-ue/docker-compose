@@ -6,4 +6,4 @@ build:
 	./script/release-script/build.sh
 
 integration-test:
-	docker build -f Dockerfile -t alonza0314/free-ran-ue:test .
+	docker build -f Dockerfile -t alonza0314/free-ran-ue:latest .
