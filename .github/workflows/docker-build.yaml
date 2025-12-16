@@ -19,7 +19,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          make
+          ./script/release-script/build.sh
 
       - name: Test Docker image
         run: |

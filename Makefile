@@ -3,7 +3,7 @@
 .DEFAULT_GOAL := build
 
 build:
-	./script/release-script/build.sh
+	docker build -f Dockerfile -t alonza0314/free-ran-ue:latest .
 
 integration-test:
 	docker build -f Dockerfile -t alonza0314/free-ran-ue:latest .
