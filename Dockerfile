@@ -1,7 +1,7 @@
 # -------------------------------
 # Stage 1: Build Go binary
 # -------------------------------
-FROM golang:1.24.5 AS builder
+FROM golang:1.25.5 AS builder
 WORKDIR /free-ran-ue
 
 COPY free-ran-ue/ .
